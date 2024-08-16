@@ -12,6 +12,7 @@ while(menu)
     {
         case 1:
             {
+                ClienteEstandar.Registrar(listaClientes);
                 break;
             }
         case 2:
