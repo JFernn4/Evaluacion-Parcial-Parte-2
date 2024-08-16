@@ -27,6 +27,7 @@ while(menu)
             }
         case 4:
             {
+                Clientes.MostrarDetalles(listaClientes);
                 break;
             }
         case 5:

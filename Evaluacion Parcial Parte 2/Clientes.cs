@@ -18,7 +18,25 @@ namespace Evaluacion_Parcial_Parte_2
             Nombre = nombre;
             Correo = correo;
             Direccion = direccion;
-            FechaRegistro = fecha;
+            FechaRegistro = fechaRegistro;
+        }
+        public static void MostrarDetalles(List<Clientes> listaClientes)
+        {
+            Console.Clear();
+            foreach (Clientes cliente in listaClientes)
+            {
+                if (cliente is ClienteEstandar clienteEstandar)
+                {
+                    Console.WriteLine("Cliente Estándar.");
+                    Console.WriteLine($"Nombre: {clienteEstandar.Nombre}. Correo:{clienteEstandar.Correo}. Dirección: {clienteEstandar.Direccion}. Fecha de Registro: {clienteEstandar.FechaRegistro}.");
+                }
+                else if (cliente is ClientePremium clientePremium)
+                {
+                    Console.WriteLine("Cliente Premium. (Descuento especial del 10%)");
+                    Console.WriteLine($"Nombre: {clientePremium.Nombre}. Correo:{clientePremium.Correo}. Dirección: {clientePremium.Direccion}. Fecha de Registro: {clientePremium.FechaRegistro}.");
+                }
+            }
+            Console.ReadKey();
         }
     }
 }
