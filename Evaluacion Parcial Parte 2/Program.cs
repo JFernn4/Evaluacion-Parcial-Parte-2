@@ -17,6 +17,7 @@ while(menu)
             }
         case 2:
             {
+                ClientePremium.Registrar(listaClientes);
                 break;
             }
         case 3:
