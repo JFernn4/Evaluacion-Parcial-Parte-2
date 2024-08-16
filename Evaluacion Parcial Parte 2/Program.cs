@@ -37,10 +37,12 @@ while(menu)
             }
         case 6:
             {
+                Clientes.Buscar(listaClientes);
                 break;
             }
         case 7:
             {
+                Pedidos.Buscar(listaPedidos, listaClientes);
                 break;
             }
         case 8:

@@ -38,5 +38,30 @@ namespace Evaluacion_Parcial_Parte_2
             }
             Console.ReadKey();
         }
+        public static void Buscar(List<Clientes>listaClientes)
+        {
+            Console.WriteLine("Ingrese el nombre del cliente que desea buscar.");
+            string clienteBuscar=Console.ReadLine();
+            Clientes buscar= listaClientes.Find(p=>p.Nombre==clienteBuscar);
+            if ( buscar == null )
+            {
+                Console.WriteLine("Cliente inexistente.");
+                Console.ReadKey();
+            }
+            else
+            {
+                if (buscar is ClientePremium clientePremium)
+                {
+                    Console.WriteLine("Cliente Premium. (Descuento especial del 10%)");
+                    Console.WriteLine($"Nombre:{clientePremium.Nombre} Correo:{clientePremium.Correo} Direccion:{clientePremium.Direccion} Fecha de registro:{clientePremium.FechaRegistro}");
+                }
+                else if (buscar is ClienteEstandar clienteEstandar)
+                {
+                    Console.WriteLine("Cliente Estándar.");
+                    Console.WriteLine($"Nombre: {clienteEstandar.Nombre}. Correo:{clienteEstandar.Correo}. Dirección: {clienteEstandar.Direccion}. Fecha de Registro: {clienteEstandar.FechaRegistro}.");
+                }
+
+            }
+        }
     }
 }

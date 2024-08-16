@@ -46,13 +46,32 @@ namespace Evaluacion_Parcial_Parte_2
                 if (pedido.Clientes is ClienteEstandar)
                 {
                     Console.WriteLine($"Número: {pedido.Numero}. Fecha: {pedido.Fecha}. Cliente: {pedido.Clientes.Nombre}.");
+                    Console.ReadKey();
                 }
                 else if (pedido.Clientes is ClientePremium)
                 {
                     Console.WriteLine($"Número: {pedido.Numero}. Fecha: {pedido.Fecha}. Cliente: {pedido.Clientes.Nombre}. (Descuento del 10%)");
+                    Console.ReadKey();
                 }
             }
-            Console.ReadKey();
+        }
+        public static void Buscar(List<Pedidos> listaPedidos, List<Clientes> listaClientes)
+        {
+            Console.Clear( );
+            Console.WriteLine("Ingrese el número del pedido que desea buscar");
+            int pedidoBuscar= Convert.ToInt32(Console.ReadLine());
+            Pedidos buscar = listaPedidos.Find(p => p.Numero == pedidoBuscar);
+            if ( buscar == null )
+            {
+                Console.WriteLine("No se ha encontrado el pedido.");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine($"Numero:{buscar.Numero} Fecha:{buscar.Fecha} Cliente:{buscar.Clientes}.");
+                Console.ReadKey();
+            }
+
         }
     }
     
