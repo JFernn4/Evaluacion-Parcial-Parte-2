@@ -38,6 +38,22 @@ namespace Evaluacion_Parcial_Parte_2
                 Pedidos pedido= new Pedidos(numero, fecha, cliente);
             }
         }
+        public static void MostrarDetalles(List<Pedidos> listaPedidos, List<Clientes> listaClientes)
+        {
+            Console.Clear();
+            foreach (Pedidos pedido in listaPedidos)
+            {
+                if (pedido.Clientes is ClienteEstandar)
+                {
+                    Console.WriteLine($"Número: {pedido.Numero}. Fecha: {pedido.Fecha}. Cliente: {pedido.Clientes.Nombre}.");
+                }
+                else if (pedido.Clientes is ClientePremium)
+                {
+                    Console.WriteLine($"Número: {pedido.Numero}. Fecha: {pedido.Fecha}. Cliente: {pedido.Clientes.Nombre}. (Descuento del 10%)");
+                }
+            }
+            Console.ReadKey();
+        }
     }
     
 }
