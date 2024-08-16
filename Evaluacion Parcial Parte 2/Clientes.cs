@@ -11,14 +11,14 @@ namespace Evaluacion_Parcial_Parte_2
         public string Nombre { get; set; }
         public string Correo { get; set; } 
         public string Direccion { get; set; }
-        public string Fecha { get; set; }
+        public string FechaRegistro { get; set; }
 
-        public Clientes(string nombre, string correo, string direccion, string fecha)
+        public Clientes(string nombre, string correo, string direccion, string fechaRegistro)
         {
             Nombre = nombre;
             Correo = correo;
             Direccion = direccion;
-            Fecha = fecha;
+            FechaRegistro = fecha;
         }
     }
 }

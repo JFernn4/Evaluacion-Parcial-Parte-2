@@ -22,6 +22,7 @@ while(menu)
             }
         case 3:
             {
+                Pedidos.Registrar(listaPedidos, listaClientes);
                 break;
             }
         case 4:
